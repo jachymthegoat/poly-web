@@ -40,7 +40,7 @@ export function AboutPopUp({ isOpen, onClose }: AboutPopUpProps) {
         <div className="about-popup" onClick={(e) => e.stopPropagation()}>
             <h2>Jáchym Nácovský</h2>
             <p className="about-popup-text">
-                I'm a software engineer with a passion for building beautiful UI and UX. In my free time I am an amateur MMA fighter.
+                Jsem softwarový inženýr, kterému záleží na UI/UX. Ve volném čase jsem amatérský MMA zápasník.
             </p>
             <div className="about-popup-experience">
                 <ul>
