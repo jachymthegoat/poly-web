@@ -5,10 +5,11 @@ export function Nav() {
 
   // musí bejt uvnitř objektu
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const resumeUrl = `${new URL("../assets/resume.pdf", import.meta.url).href}#page=1`;
 
   const navItems = [
-  { label: "About", onClick: () => setIsAboutOpen(true) },
-  { label: "Résumé", onClick: () => window.open("/resume.pdf", "_blank") },
+  { label: "O mně", onClick: () => setIsAboutOpen(true) },
+  { label: "Životopis", onClick: () => window.open(resumeUrl, "_blank", "noopener,noreferrer") },
   ];
 
   // tady predavam co dela onClose
