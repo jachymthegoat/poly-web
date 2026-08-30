@@ -1,0 +1,43 @@
+# Kontext projektu
+
+Osobní portfolio webová stránka. Vite + React + TypeScript, žádný CSS framework
+(vanilla CSS, proměnné v `src/index.css`, BEM-like třídy v `App.css`).
+Autor: Jáchym Nácovský, softwarový inženýr (React/TS/PostgreSQL).
+
+Struktura:
+- `src/components/Nav.tsx` – horní navigace
+- `src/components/AboutPopUp.tsx` – modal "O mně"
+- `src/components/BentoGrid.tsx` – grid projektů (hlavní obsah stránky)
+- `src/data/projects.ts` – data projektů (typ `Project`)
+- `src/App.tsx`, `src/App.css` – layout + styly gridu a popupu
+- `src/index.css` – design tokeny (CSS custom properties) + globální reset
+
+# Design směr (Apple-ish, inspirace zegzulka.com)
+
+- Cíl: minimalismus, focus na PROJEKTY, ne na text okolo. Žádné zbytečné sekce
+  (bez "hero" odstavců, bez dlouhých bio textů).
+- Paleta zůstává teplá off-white (`--bg: #faf9f5`, `--surface: #ffffff`), NEMĚNIT
+  bez výslovného zadání.
+- Typografie: serif (`--serif`) na nadpisy/tituly, sans (`--sans`) na běžný text.
+  Zachovat tenké, lehké řezy (font-weight: 400), žádný bold "marketing" styl.
+- Animace: jemné, krátké (150–300ms), ease-out. Žádné bounce/elastic efekty.
+  Preferuj čisté CSS transitions/keyframes před knihovnami (framer-motion apod.
+  přidávat JEN pokud o to výslovně požádám).
+- Bento tiles: obrázek/video na pozadí (object-fit: cover), title jako overlay
+  dole nad jemným gradientem, hover = mírný scale + silnější stín.
+
+# Coding pravidla pro Cursor
+
+- Piš TypeScript, funkční komponenty, žádné class komponenty.
+- Nepřidávej nové npm závislosti bez dotazu (zvlášť žádné UI/animační knihovny
+  navíc – projekt musí zůstat lightweight kvůli Vite build).
+- Respektuj existující názvy CSS tříd a BEM-like konvenci (`.bento-tile`,
+  `.bento-tile__title`, `.bento-tile--large` atd.). Nové třídy pojmenovávej stejně.
+- Barvy/rozestupy vždy přes CSS proměnné z `index.css`, ne natvrdo hex/px kde
+  už proměnná existuje.
+- Komentáře v kódu můžou být česky (autor tak píše).
+- Když upravuješ existující soubor, vracej JEN diff / změněné části, ne celý
+  soubor znovu – šetří to tokeny na free planu.
+- Neptej se na potvrzení u drobných věcí, rovnou navrhni řešení a implementuj.
+- Responsive breakpointy už existují na 900px a 480px – nové styly do nich
+  zapadni, nevytvářej nové breakpointy bez důvodu.

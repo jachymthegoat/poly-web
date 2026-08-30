@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AboutPopUp } from "./AboutPopUp";
 
 export function Nav() {
 
   // musí bejt uvnitř objektu
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 8);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const resumeUrl = `${new URL("../assets/resume.pdf", import.meta.url).href}#page=1`;
 
   const navItems = [
@@ -14,7 +26,7 @@ export function Nav() {
 
   // tady predavam co dela onClose
   return (
-    <header className="nav">
+    <header className={`nav${isScrolled ? " nav--scrolled" : ""}`}>
       <a href="/" className="nav-brand">
         Jáchym
       </a>

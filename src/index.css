@@ -1,5 +1,5 @@
 :root {
-  --text: #73726c;
+  --text: #5f5e58;
   --text-h: #141413;
   --bg: #faf9f5;
   --surface: #ffffff;
@@ -7,17 +7,30 @@
   --border: #e8e6dc;
   --tile-radius: 16px;
 
-  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --serif: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
+  --font-sf: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+    system-ui, 'Segoe UI', sans-serif;
+  --sans: var(--font-sf);
+  --serif: var(--font-sf);
+  --weight-body: 500;
+  --weight-heading: 600;
 
-  font: 15px/1.4 var(--sans);
+  --nav-height: 68px;
+  --text-xs: 15px;
+  --text-sm: 19px;
+  --text-md: 21px;
+  --text-lg: 28px;
+  --text-xl: 40px;
+  --text-display: clamp(44px, 6vw, 72px);
+  --text-brand: 32px;
+
+  font: var(--weight-body) var(--text-md) / 1.45 var(--sans);
   color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
 }
 
 *,

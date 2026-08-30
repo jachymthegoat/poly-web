@@ -1,0 +1,31 @@
+# --- Nikdy nepotřebuje vidět, jen žerou kontext ---
+node_modules/
+dist/
+build/
+.git/
+.vscode/
+.DS_Store
+*.log
+
+# lockfiles - obrovské, nulová hodnota pro model
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+
+# env a cache
+.env
+.env.*
+.cache/
+.turbo/
+coverage/
+
+# binárky/media - Cursor je stejně nedokáže "číst", jen zabírají tokeny při @codebase
+public/**/*.mp4
+public/**/*.mov
+public/**/*.png
+public/**/*.jpg
+public/**/*.jpeg
+public/**/*.webp
+src/assets/**/*.pdf
+src/assets/**/*.mp4
