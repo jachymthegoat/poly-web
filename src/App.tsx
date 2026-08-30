@@ -1,14 +1,23 @@
-import { Nav } from './components/Nav'
-import { BentoGrid } from './components/BentoGrid'
-import { projects } from './data/projects'
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { LoadingOverlay } from './components/LoadingOverlay'
+import { Home } from './pages/Home'
+import { ProjectPage } from './pages/ProjectPage'
 import './App.css'
 
 function App() {
+  const [showLoadingOverlay, setShowLoadingOverlay] = useState(true)
+
   return (
-    <div className="page">
-      <Nav />
-      <BentoGrid projects={projects} />
-    </div>
+    <>
+      {showLoadingOverlay && (
+        <LoadingOverlay onFinished={() => setShowLoadingOverlay(false)} />
+      )}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/:id" element={<ProjectPage />} />
+      </Routes>
+    </>
   )
 }
 
