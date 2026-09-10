@@ -13,15 +13,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'bigint-calculator',
-    title: 'Bigint Calculator',
+    id: 'blupikova-knihovna',
+    title: 'Blupíkova Knihovna',
     span: 'small',
-    video: '/projects/bigint-calculator.mp4',
-    tags: ['C', 'Algorithms', 'CLI'],
+    video: '/projects/blupik-knihovna.mp4',
+    tags: ['React', 'TypeScript', 'Canvas'],
     description:
-      'Konzolová aplikace pro práci s libovolně velkými celými čísly — různé číselné soustavy a vyhodnocování aritmetických výrazů v infixovém zápisu.',
-    githubUrl: 'https://github.com/jachymthegoat/Bigint-Calculator',
-    gallery: ['/projects/bigint-calculator-2.jpg'],
+      'Osobní knihovna ve stylu pixel-art vesničky — tři domy na náměstí (Chci přečíst, Právě čtu, Přečtené) a knihovník Blupík, který chodí po mapě a dojíždí ke knihám. Data v localStorage, bez backendu.',
+    githubUrl: 'https://github.com/jachymthegoat/blupikova-knihovna',
   },
   {
     id: 'infernal',
